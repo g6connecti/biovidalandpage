@@ -1,0 +1,6 @@
+{
+  "name": "Biovein - Fitoterapia Vascular Avançada",
+  "description": "Tratamento fitoterápico avançado para varizes, vasinhos e má circulação com Pinus Pinaster e Vitis Vinifera.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
