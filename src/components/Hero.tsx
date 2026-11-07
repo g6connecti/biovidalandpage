@@ -1,5 +1,6 @@
 import React from 'react';
 import { Star, ShieldCheck, CheckCircle2, Truck, ArrowRight, Sparkles } from 'lucide-react';
+import heroBioveinImg from '../assets/images/hero_biovein_bottles_1794021825087.jpg';
 
 interface HeroProps {
   onCtaClick: () => void;
@@ -81,7 +82,10 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
               <div className="absolute -inset-2 bg-gradient-to-tr from-teal-400/40 to-emerald-400/40 rounded-3xl blur-xl opacity-75 group-hover:opacity-100 transition duration-500" />
               <div className="relative overflow-hidden rounded-2xl bg-white/10 p-2 border border-teal-300/40 shadow-2xl backdrop-blur-sm">
                 <img
-                  src="/src/assets/images/hero_biovein_bottles_1794021825087.jpg"
+                  src={heroBioveinImg}
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src = '/images/hero_biovein_bottles.jpg';
+                  }}
                   alt="Biovein Fitoterapia Vascular - Frasco Oficial com Pinus Pinaster e Vitis Vinifera"
                   className="w-full h-80 sm:h-96 object-cover rounded-xl transition duration-500 group-hover:scale-[1.02]"
                   referrerPolicy="no-referrer"

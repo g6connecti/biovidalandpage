@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { INGREDIENTS_DATA } from '../data/landingData.ts';
 import { Leaf, FlaskConical, Sparkles, Check, BookOpen } from 'lucide-react';
+import botanicalIngredientsImg from '../assets/images/botanical_pinus_grape_1794021824942.jpg';
 
 interface IngredientsProps {
   onSelectKitClick: () => void;
@@ -28,7 +29,10 @@ export const Ingredients: React.FC<IngredientsProps> = ({ onSelectKitClick }) =>
         <div className="mb-12 bg-slate-50 rounded-3xl border border-slate-200 overflow-hidden shadow-sm grid grid-cols-1 lg:grid-cols-12 items-center">
           <div className="lg:col-span-5 h-64 sm:h-80 relative">
             <img
-              src="/src/assets/images/botanical_pinus_grape_1794021824942.jpg"
+              src={botanicalIngredientsImg}
+              onError={(e) => {
+                (e.currentTarget as HTMLImageElement).src = '/images/botanical_pinus_grape.jpg';
+              }}
               alt="Matérias-primas botânicas puras: Pinus Pinaster, Vitis Vinifera e Castanha da Índia"
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Stethoscope, CheckCircle, ArrowRight, Activity, ShieldCheck } from 'lucide-react';
+import doctorSpecialistImg from '../assets/images/doctor_vascular_specialist_1794021825888.jpg';
 
 interface DoctorSectionProps {
   onLearnMoreClick: () => void;
@@ -14,7 +15,10 @@ export const DoctorSection: React.FC<DoctorSectionProps> = ({ onLearnMoreClick }
           <div className="lg:col-span-5 relative">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-teal-50 bg-slate-100">
               <img
-                src="/src/assets/images/doctor_vascular_specialist_1794021825888.jpg"
+                src={doctorSpecialistImg}
+                onError={(e) => {
+                  (e.currentTarget as HTMLImageElement).src = '/images/doctor_vascular_specialist.jpg';
+                }}
                 alt="Dra. Beatriz Silva - Especialista em Angiologia e Cirurgia Vascular"
                 className="w-full h-auto object-cover object-top max-h-[500px]"
                 referrerPolicy="no-referrer"

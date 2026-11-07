@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowLeftRight, CheckCircle2, AlertTriangle, ShieldCheck } from 'lucide-react';
+import vascularLegsImg from '../assets/images/vascular_circulation_legs_1794021826359.jpg';
 
 interface BeforeAfterSliderProps {
   onCtaClick: () => void;
@@ -32,7 +33,10 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({ onCtaClick
             <div className="relative w-full h-80 sm:h-[420px] rounded-2xl overflow-hidden select-none border-2 border-slate-700 shadow-xl">
               {/* After Image (Full Background) */}
               <img
-                src="/src/assets/images/vascular_circulation_legs_1794021826359.jpg"
+                src={vascularLegsImg}
+                onError={(e) => {
+                  (e.currentTarget as HTMLImageElement).src = '/images/vascular_circulation_legs.jpg';
+                }}
                 alt="Pernas saudáveis, lisas e sem varizes após Biovein"
                 className="absolute inset-0 w-full h-full object-cover"
                 referrerPolicy="no-referrer"
@@ -48,7 +52,10 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({ onCtaClick
               >
                 <div className="relative w-full h-full">
                   <img
-                    src="/src/assets/images/vascular_circulation_legs_1794021826359.jpg"
+                    src={vascularLegsImg}
+                    onError={(e) => {
+                      (e.currentTarget as HTMLImageElement).src = '/images/vascular_circulation_legs.jpg';
+                    }}
                     alt="Pernas com varizes e inchaço antes do Biovein"
                     className="absolute inset-0 w-full h-full object-cover filter contrast-125 saturate-150 brightness-90 hue-rotate-[320deg]"
                     referrerPolicy="no-referrer"
